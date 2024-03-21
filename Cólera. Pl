@@ -1,0 +1,23 @@
+% Hechos con los sintomas de colera
+sintoma(vomitos).
+sintoma(diarrea_acuosa).
+sintoma(fiebre).
+sintoma(decaimiento).
+sintoma(deshidratacion).
+sintoma(dolor_abdominal).
+
+% Hechos con las posibles causas de colera
+causa(bacteria_manos).
+causa(contaminacion_agua).
+causa(contaminacion_alimentos).
+
+% Reglas
+diagnostico_colera :- sintoma(fiebre), sintoma(diarrea_acuosa), sintoma(deshidratacion), causa(bacteria_vibrio_cholerae), causa(contaminacion_agua), causa(contaminacion_alimentos).
+diagnostico_colera :- sintoma(vomitos), sintoma(diarrea_acuosa), sintoma(decaimiento), causa(bacteria_vibrio_cholerae), causa(contaminacion_agua), causa(contaminacion_alimentos).
+
+% ejemplo
+% ?- diagnostico_colera.
+% true.
+
+% ?- sintoma(fiebre), sintoma(diarrea_acuosa), sintoma(deshidratacion).
+% true.
